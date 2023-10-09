@@ -5,12 +5,12 @@ default: &default
   host: db
   username: user
   password: password
-  database: marchive_production
+  database: db
 
 development:
   <<: *default
-  database: marchive_development
+  database: db
 
 test:
   <<: *default
-  database: marchive_test
+  database: db
