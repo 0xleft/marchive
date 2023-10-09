@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: webapp
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
