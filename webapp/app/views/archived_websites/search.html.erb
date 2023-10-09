@@ -1,0 +1,7 @@
+<h1>Search results</h1>
+
+<ul>
+  <% @archived_websites.each do |website| %>
+    <li><%= link_to website.url %></li>
+  <% end %>
+</ul>

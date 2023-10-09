@@ -1,0 +1,5 @@
+# Dev
+
+```bash
+./server.sh
+```

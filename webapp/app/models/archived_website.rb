@@ -1,0 +1,2 @@
+class ArchivedWebsite < ApplicationRecord
+end

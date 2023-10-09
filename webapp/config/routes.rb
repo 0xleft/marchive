@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'archived_websites#index'
+  get 'search', to: 'archived_websites#search'
+  post 'archived_websites', to: 'archived_websites#create'
 end

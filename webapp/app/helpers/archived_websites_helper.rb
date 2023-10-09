@@ -1,0 +1,2 @@
+module ArchivedWebsitesHelper
+end
