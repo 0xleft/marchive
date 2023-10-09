@@ -4,7 +4,7 @@ class ArchivedWebsitesController < ApplicationController
   end
 
   def search
-    @search = params[:search]
+    @search = params[:url]
     @archived_websites = ArchivedWebsite.where('url LIKE ?', "%#{@search}%").limit(10)
   end
 
@@ -13,5 +13,7 @@ class ArchivedWebsitesController < ApplicationController
     content = "test"
     archived_website = ArchivedWebsite.new(url: url, content: content, archived: Date.today)
     archived_website.save
+
+    redirect_to root_path
   end
 end

@@ -1,7 +1,8 @@
-<h1>Search results</h1>
+<h1>Search results for <%= @search %></h1>
 
 <ul>
   <% @archived_websites.each do |website| %>
-    <li><%= link_to website.url %></li>
+    <!-- link to archive?url=website.url -->
+    <li><%= website.url %></li>
   <% end %>
 </ul>
