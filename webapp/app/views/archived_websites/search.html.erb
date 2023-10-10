@@ -1,8 +1,12 @@
-<h1>Search results for <%= @search %></h1>
+<div class="section" style="background-color: #161925">
+    <h1>Search results for <%= @search %>:</h1>
 
-<ul>
-  <% @archived_websites.each do |website| %>
-    <!-- link to archive?url=website.url -->
-    <li><%= website.url %></li>
-  <% end %>
-</ul>
+    <ul class="link_list">
+      <% @archived_websites.each do |website| %>
+        <!-- link to archive?url=website.url -->
+        <div>
+          <a href="/archive?url=<%= website.url %>&date=<%= website.archived %>"><%= website.url %></a>
+        </div>
+      <% end %>
+    </ul>
+</div>

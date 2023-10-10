@@ -1,25 +1,30 @@
-<h1>Search</h1>
+<div class="section" style="background-color: #1d2741">
+  <h1>Search for an archived website</h1>
 
-<%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :url, params[:url] %>
-  <%= submit_tag "Search", name: nil %>
-<% end %>
-
-<h1>Archive a new website</h1>
-
-<%= form_tag "create", method: :post do %>
-  <%= label_tag :url, "URL:" %>
-  <%= text_field_tag :url, params[:url] %>
-  <%= submit_tag "Archive" %>
-<% end %>
-
-<h1>Recently archived websites</h1>
-
-<ul>
-  <% @last_archived_websites.each do |website| %>
-    <div>
-      <h2>URL <%= website.url %></h2>
-      <p>Archived at: <%= website.archived %></p>
-    </div>
+  <%= form_tag search_path, method: :get do %>
+    <%= text_field_tag :url, params[:url] %>
+    <%= submit_tag "Search", name: nil %>
   <% end %>
-</ul>
+</div>
+
+<div class="section" style="background-color: #0d1b34">
+  <h1>Archive a new website</h1>
+
+  <%= form_tag "create", method: :post do %>
+    <%= text_field_tag :url, params[:url] %>
+
+    <%= submit_tag "Archive" %>
+  <% end %>
+</div>
+
+<div class="section" style="background-color: #131d31">
+  <h1>Recently archived websites</h1>
+
+  <ul class="link_list">
+    <% @last_archived_websites.each do |website| %>
+      <div>
+        <a href="/archive?url=<%= website.url %>&date=<%= website.archived %>"><%= website.url %></a>
+      </div>
+    <% end %>
+  </ul>
+</div>

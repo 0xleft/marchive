@@ -13,4 +13,4 @@ COPY . .
 # Expose port 3000 for the Rails application
 EXPOSE 80
 # Start the Rails application
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80", "-e", "production"]
